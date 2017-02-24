@@ -89,4 +89,19 @@ function verify_signature($data, $signature, $public_key) {
   // returns 1 if data and signature match, 0 otherwise
 }
 
+// $string = "Give me a checksum.";
+//
+// echo crc32($string);
+// // 3703541059
+//
+// echo md5($string);
+// // cfa5d275b53523cc6b393b4b76da2da7
+//
+// echo sha1($string);
+// // b813c8d640644c451d3a45b628a6ebbe60fbb9ba
+
+function calculate_checksum($data) {
+  return sha1($data);
+}
+
 ?>
