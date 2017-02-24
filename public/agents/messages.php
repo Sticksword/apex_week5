@@ -23,16 +23,16 @@
     <link rel="stylesheet" media="all" href="<?php echo DOC_ROOT . '/includes/styles.css'; ?>" />
   </head>
   <body>
-    
+
     <a href="<?php echo url_for('/agents/index.php') ?>">Back to List</a>
     <br/>
 
     <h1>Messages for <?php echo h($agent['codename']); ?></h1>
-    
+
     <?php if($current_user['id'] == $agent['id']) { ?>
       <p>Your messages are automatically decrypted using your private key.</p>
     <?php } ?>
-    
+
     <table>
       <tr>
         <th>Date</th>
@@ -41,15 +41,20 @@
         <th>Message</th>
         <th>Signature</th>
       </tr>
-      
+
       <?php while($message = db_fetch_assoc($message_result)) { ?>
         <?php
           $created_at = strtotime($message['created_at']);
-          
-          // Oooops.
-          // My finger accidentally hit the delete-key.
-          // Sorry, APEX!!!
-          
+
+          $sender_result = find_agent_by_id($message['sender_id']);
+          $sender = db_fetch_assoc($sender_result);
+
+          $cipher_text = $message['cipher_text'];
+          $message_text = ($current_user['id'] == $agent['id'] ? pkey_decrypt($cipher_text, $current_user['private_key']) : $cipher_text);
+
+          $signature = $message['signature'];
+          $validity_text = (verify_signature($cipher_text, $signature, $sender['public_key']) ? 'Valid' : 'Invalid');
+
         ?>
         <tr>
           <td><?php echo h(strftime('%b %d, %Y at %H:%M', $created_at)); ?></td>
@@ -60,6 +65,6 @@
         </tr>
       <?php } ?>
     </table>
-    
+
   </body>
 </html>

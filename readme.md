@@ -24,20 +24,35 @@ The following **required** functionality is completed:
   * [x]  Required: Repair the create and verify signature code
 
 6\. Encrypted Message 2
-  * [ ]  Required: Decrypt the message
-  * [ ]  Required: Verify the message
-  * [ ]  Required: Include a response message in this README
+  * [x]  Required: Decrypt the message
+   * Cannot access APEX from this location. Send new agent codename and public key so I can contact. Encrypt response to protect codename. Include signature to verify identity and message integrity. -- sydneybristow
+  * [x]  Required: Verify the message
+   * NOT VALID!!!
+  * [x]  Required: Include a response message in this README
+   * NICE TRY DARK SHADOW BUT THIS IS A FAKE MESSAGE
 
 7\. Agent Messages
-  * [ ]  Required: Repair the dropbox code
-  * [ ]  Required: Repair the messages area
-  * [ ]  Required: Display encrypted messages for all agents
-  * [ ]  Required: Messages indicate whether the message signature is valid
-  * [ ]  Required: Your messages are automatically decrypted
+  * [x]  Required: Repair the dropbox code
+  * [x]  Required: Repair the messages area
+  * [x]  Required: Display encrypted messages for all agents
+  * [x]  Required: Messages indicate whether the message signature is valid
+  * [x]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
-  * [ ]  Required: Decrypt as many email messages as possible
-  * [ ]  Required: Identify the double agent: ____________________
+  * [x]  Required: Decrypt as many email messages as possible
+   * email_01 A friend to DS: The SQL injection we discussed is in place. Just search for an agent.
+    * VALID
+   * email_02 DS to a friend:
+    * VALID using ds_pub_key
+   * email_03 A friend to DS: Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
+    * VALID
+   * email_04 DS to a friend:
+    * VALID using ds_pub_key
+   * email_05 A friend to DS: Let me know before you go inside. I'll create a distraction. - Austin
+    * INVALID - wow someone tryna frame Austin
+   * email_06 A friend to DS: Let me know before you go inside. I'll create a distraction. - Natasha
+    * VALID
+  * [x]  Required: Identify the double agent: NATASHA!!!
 
 The following objectives are **optional**:
 

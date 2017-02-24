@@ -56,7 +56,7 @@ function generate_keys($config=PUBLIC_KEY_CONFIG) {
 }
 
 function pkey_encrypt($plaintext, $public_key) {
-  openssl_public_encrypt($plaintext, $encrypted, $public_key));
+  openssl_public_encrypt($plaintext, $encrypted, $public_key);
 
   // Use base64_encode to make contents viewable/sharable
   return base64_encode($encrypted);
