@@ -10,8 +10,10 @@ The following **required** functionality is completed:
   * [x]  Required: Repair the symmetric encrypt and decrypt code
 
 2\. Encrypted Message 1
-  * [ ]  Required: Decrypt the government message
-  * [ ]  Required: Encrypt a response and include in this README
+  * [?]  Required: Decrypt the government message
+  * [x]  Required: Encrypt a response and include in this README
+    * 8TThxrIfhSgv7qlNkxYG6d9bVuhhF5nGTR9+wM2GfiE=
+    * I used Thursday key
 
 3\. Generate Public-Private Keys
   * [x]  Required: Repair the key generator code
