@@ -40,24 +40,30 @@ The following **required** functionality is completed:
 
 8\. Identify the Double Agent
   * [x]  Required: Decrypt as many email messages as possible
-   * email_01 A friend to DS: The SQL injection we discussed is in place. Just search for an agent.
-    * VALID
-   * email_02 DS to a friend:
-    * VALID using ds_pub_key
-   * email_03 A friend to DS: Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
-    * VALID
-   * email_04 DS to a friend:
-    * VALID using ds_pub_key
-   * email_05 A friend to DS: Let me know before you go inside. I'll create a distraction. - Austin
-    * INVALID - wow someone tryna frame Austin
-   * email_06 A friend to DS: Let me know before you go inside. I'll create a distraction. - Natasha
-    * VALID
+    * email_01 A friend to DS: The SQL injection we discussed is in place. Just search for an agent.
+      * VALID using friend_pub_key
+
+    * email_02 DS to a friend:
+      * VALID using ds_pub_key
+
+    * email_03 A friend to DS: Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
+      * VALID using friend_pub_key
+
+    * email_04 DS to a friend:
+      * VALID using ds_pub_key
+
+    * email_05 A friend to DS: Let me know before you go inside. I'll create a distraction. - Austin
+      * INVALID using friend_pub_key - wow someone tryna frame Austin
+
+    * email_06 A friend to DS: Let me know before you go inside. I'll create a distraction. - Natasha
+      * VALID using friend_pub_key
+
   * [x]  Required: Identify the double agent: NATASHA!!!
 
 The following objectives are **optional**:
 
 * Bonus Objective 1\.
-  * [ ]  Track down the bugs in the code and fix them.
+  * [x]  Track down the bugs in the code and fix them.
 
 * Bonus Objective 2\.
   * [ ]  Write a report of your discoveries (longer than 300 characters).
